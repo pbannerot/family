@@ -1,0 +1,59 @@
+import com.esolution.family.members.view.ViewOnSelectionTableView
+import com.esolution.family.model.family.Family
+import com.esolution.family.model.family.Man
+import com.esolution.family.model.family.Person
+import com.esolution.family.model.family.Woman
+import org.eclipse.emf.parsley.edit.ui.provider.TableViewerContentProvider
+
+/* com.esolution.family.members.view EMF Parsley Dsl Module file */
+module com.esolution.family.members.view {
+	
+	parts {
+		viewpart com.esolution.family.members.view {
+			viewname "Parents"
+			viewclass ViewOnSelectionTableView
+		}
+	}
+	
+	bindings {
+		type TableViewerContentProvider -> MyTableViewerContentProvider
+	}
+	
+	featureCaptionProvider {
+		text {
+			Person: name -> "Nom"
+			Person: age -> "Age"
+			Person: ^children -> "Enfants"
+			Person: parents -> "Parents"
+			Person: mother -> "Mère"
+			Person: father -> "Père"
+		}
+	}
+	
+	tableFeaturesProvider {
+		features {
+			Person -> name, age, mother, father
+		}
+	}
+	
+	labelProvider {
+		text {
+			Family -> "Famille " + if (null !== name) name else ""
+			Person -> if (null === name) "" else name.toFirstUpper
+		}
+		image {
+			Family -> "Family.gif"
+			Woman -> "Woman.gif"
+			Man -> "Man.gif"
+		}
+	}
+	
+	menuBuilder {
+		menus {
+			Person p -> #[actionDelete]
+		}
+		emfMenus {
+			Person p -> #[]
+		}
+	}
+}

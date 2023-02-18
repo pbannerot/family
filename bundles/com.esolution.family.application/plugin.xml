@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            icon="icons/Family.gif"
+            visible="true">
+         <run
+               class="com.esolution.family.application.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.esolution.family.application.Perspective"
+            fixed="true"
+            icon="icons/Family.gif"
+            id="com.esolution.family.application.perspective"
+            name="Family Perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.esolution.family.application.application"
+            name="Family application">
+         <property
+               name="appName"
+               value="Family application">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/Family.gif">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

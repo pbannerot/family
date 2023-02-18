@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.emf.parsley"
+            class="com.esolution.family.view.ViewExecutableExtensionFactory:com.esolution.family.view.ViewSaveableTreeFormView"
+            icon="icons/Family.gif"
+            id="com.esolution.family.view"
+            name="Famille"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.esolution.family.view.commands.category"
+            name="Family view Category">
+      </category>
+      <command
+            categoryId="com.esolution.family.view.commands.category"
+            id="com.esolution.family.view.commands.callGreetingCommand"
+            name="Call Greeting Command">
+      </command>
+   </extension>
+   <extension
+         id="greetingMenu"
+         name="greetingMenu"
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Greeting">
+            <command
+                  commandId="com.esolution.family.view.commands.callGreetingCommand"
+                  icon="icons/Family.gif"
+                  label="Greeting"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=main">
+         <command
+               commandId="com.esolution.family.view.commands.callGreetingCommand"
+               icon="icons/Family.gif"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="com.esolution.family.extensionpoint.definition.greeter">
+      <client
+            class="com.esolution.family.view.greeting.contribution.MyGreeterContribution">
+      </client>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.esolution.family.extensionpoint.definition.EvaluateContributionsHandler"
+            commandId="com.esolution.family.view.commands.callGreetingCommand">
+      </handler>
+   </extension>
+</plugin>

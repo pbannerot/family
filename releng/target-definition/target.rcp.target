@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+<target name="target.rcp">
+<locations>
+<!--
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="com.mysql.jdbc.feature.group" version="5.1.26"/>
+			<unit id="javax.persistence.feature.group" version="2.1.0"/>
+			<unit id="org.hibernate.feature.group" version="4.3.7.1"/>
+			<repository location="http://www.elver.org/eclipse/2.1.0/update"/>
+			<unit id="org.apache.log4j.feature.group" version="1.2.16"/>
+		</location>
+-->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/releases/2019-12"/>
+			<unit id="org.eclipse.sdk.feature.group" version="4.14.0.v20191210-0610"/>
+			<unit id="org.eclipse.emf.parsley.cdo.feature.feature.group" version="1.9.0.v20191022-0830"/>
+			<unit id="org.eclipse.emf.parsley.cdo.feature.source.feature.group" version="1.9.0.v20191022-0830"/>
+			<unit id="org.eclipse.emf.parsley.sdk.feature.group" version="1.9.0.v20191022-0830"/>
+			<unit id="org.eclipse.emf.parsley.sdk.source.feature.group" version="1.9.0.v20191022-0830"/>
+			<unit id="org.eclipse.emf.sdk.feature.group" version="2.20.0.v20191028-0905"/>
+			<unit id="org.eclipse.emf.validation.sdk.feature.group" version="1.12.1.201812070911"/>
+			<unit id="org.eclipse.xsd.sdk.feature.group" version="2.20.0.v20191117-1035"/>
+			<unit id="org.eclipse.xtext.sdk.feature.group" version="2.20.0.v20191202-1256"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="file:/C:/Temp/com.safran.external.libraries.convert/target/repository/"/>
+			<unit id="org.apache.commons.commons-compress" version="1.20.0"/>
+			<unit id="org.apache.commons.csv" version="1.6.0"/>
+			<unit id="slf4j.api" version="1.7.10"/>
+			<unit id="slf4j.log4j12" version="1.7.10"/>
+			<unit id="log4j" version="1.2.17"/>
+			<unit id="org.apache.commons.commons-codec" version="1.15.0"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/nebula/releases/latest"/>
+			<unit id="org.eclipse.nebula.widgets.nebulaslider.feature.feature.group" version="1.0.0.202208171809"/>
+		</location>
+	<!-- location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+		<repository location="https://download.eclipse.org/releases/2022-12"/>
+		<unit id="org.eclipse.emf.ecoretools.sdk.feature.group" version="3.4.0.202201202026"/>
+		<unit id="org.eclipse.emf.parsley.sdk.feature.group" version="1.13.0.v20201130-1005"/>
+		<unit id="org.eclipse.emf.sdk.feature.group" version="2.32.0.v20220925-1245"/>
+		<unit id="org.eclipse.sdk.feature.group" version="4.26.0.v20221020-2202"/>
+		<unit id="org.eclipse.xsd.sdk.feature.group" version="2.32.0.v20220925-0948"/>
+		<unit id="org.eclipse.xtext.sdk.feature.group" version="2.29.0.v20221024-0854"/>
+		<unit id="org.eclipse.emf.parsley.cdo.feature.feature.group" version="1.13.0.v20201130-1005"/>
+		<unit id="org.eclipse.swt.tools.feature.feature.group" version="3.108.700.v20220914-2245"/>
+	</location -->
+</locations>
+	<environment>
+		<arch>x86_64</arch>
+		<os>win32</os>
+		<ws>win32</ws>
+		<nl>fr_FR</nl>
+	</environment>
+	<targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_311"/>
+</target>

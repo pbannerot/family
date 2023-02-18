@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.emf.parsley"
+            class="com.esolution.family.view.ViewExecutableExtensionFactory:com.esolution.family.view.ViewSaveableTreeFormView"
+            id="com.esolution.family.view"
+            name="Famille"
+            restorable="true">
+      </view>
+   </extension>
+</plugin>

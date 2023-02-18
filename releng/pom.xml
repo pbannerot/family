@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>com.esolution.family.releng</artifactId>
+  <packaging>pom</packaging>
+  <parent>
+		<groupId>com.esolution.family</groupId>
+		<artifactId>com.esolution.family.root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<modules>
+		<module>target-definition</module>
+		<module>com.esolution.family.product</module>
+	</modules>
+
+	<build>
+		<plugins>
+
+			<!-- Work around bug 348045 (servletbridge.extensionbundle) -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<dependency-resolution>
+						<optionalDependencies>ignore</optionalDependencies>
+					</dependency-resolution>
+					<filters>
+						<filter>
+							<type>java-package</type>
+							<id>javax.servlet</id>
+							<restrictTo>
+								<type>eclipse-plugin</type>
+								<id>javax.servlet</id>
+							</restrictTo>
+						</filter>
+					</filters>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

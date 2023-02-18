@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.emf.parsley"
+            class="com.esolution.family.members.view.ViewExecutableExtensionFactory:com.esolution.family.members.view.ViewOnSelectionTableView"
+            icon="icons/Family.gif"
+            id="com.esolution.family.members.view"
+            name="Parents"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.esolution.family.application.perspective">
+         <view
+               closeable="false"
+               id="com.esolution.family.members.view"
+               minimized="false"
+               ratio=".65"
+               relationship="bottom"
+               relative="com.esolution.family.view"
+               showTitle="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+</plugin>

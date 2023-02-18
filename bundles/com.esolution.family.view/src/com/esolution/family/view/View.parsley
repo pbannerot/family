@@ -1,0 +1,67 @@
+import com.esolution.family.model.family.Family
+import com.esolution.family.model.family.FamilyFactory
+import com.esolution.family.model.family.Man
+import com.esolution.family.model.family.Person
+import com.esolution.family.model.family.Woman
+import com.esolution.family.view.ViewSaveableTreeFormView
+import org.eclipse.emf.parsley.composite.DialogControlFactory
+import org.eclipse.emf.parsley.composite.FormControlFactory
+import org.eclipse.emf.parsley.resource.ResourceManager
+import org.eclipse.swt.SWT
+
+/* com.esolution.family.view EMF Parsley Dsl Module file */
+module com.esolution.family.view {
+	
+	parts {
+		viewpart com.esolution.family.view {
+			viewname "Famille"
+			viewclass ViewSaveableTreeFormView
+		}
+	}
+	
+	bindings {
+		type ResourceManager -> TreeformResourceManager
+		value int TreeFormSashStyle -> SWT.HORIZONTAL
+		type FormControlFactory -> MyFormControlFactory 
+		type DialogControlFactory -> MyDialogReadOnlyControlFactory
+	}
+	
+	labelProvider {
+		text {
+			Family -> "Famille " + if (null !== name) name else ""
+			Person -> if (null === name) "" else name.toFirstUpper
+		}
+		image {
+			Family -> "Family.gif"
+			Woman -> "Woman.gif"
+			Man -> "Man.gif"
+		}
+	}
+	
+	featureCaptionProvider {
+		text {
+			Family: name -> "Nom "
+			Person: name -> "Nom "
+			Person: parents -> "Parents "
+			Person: ^children  -> "Enfants "
+			Person: age -> "Age "
+		}
+		
+	}
+	
+	menuBuilder {
+		emfMenus {
+			Family -> #[actionAdd("Add a female", members, FamilyFactory.eINSTANCE.createWoman),
+						actionAdd("Add a male", members, FamilyFactory.eINSTANCE.createMan)]
+			Person -> #[]
+		}
+	}
+	
+	featuresProvider {
+		features {
+			Woman -> name, age, parents, ^children
+			Man -> name, age, parents, ^children
+		}
+	}
+	
+}

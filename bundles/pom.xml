@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>com.esolution.family.bundles</artifactId>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>com.esolution.family</groupId>
+		<artifactId>com.esolution.family.root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<modules>
+		<module>com.esolution.logging</module>
+		<module>com.esolution.family.application</module>
+		<module>com.esolution.family.model</module>
+		<module>com.esolution.family.view</module>
+		<module>com.esolution.family.members.view</module>
+		<module>com.esolution.family.validation</module>
+		<module>com.esolution.family.extensionpoint.definition</module>
+	</modules>
+</project>
